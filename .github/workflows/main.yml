@@ -1,0 +1,56 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [develop]
+    types: [opened, synchronize]
+
+jobs:
+  avoid_redundancy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Cancel Previous Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{github.token}}
+
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.15.0"
+          cache: "npm"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Generating Build
+        run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
+
+  test:
+    needs: [build]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          cache: "npm"
+          node-version: "18.15.0"
+      - name: Install Dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+      - name: Testing Code
+        run: npm run test
