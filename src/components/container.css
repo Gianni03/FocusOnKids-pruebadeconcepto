@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  max-width: 980px;
-  border-radius: 5px;
+  width: 100vw;
+  /* overflow-y: hidden; */
+  /* max-width: 980px; */
+  /* border-radius: 5px; */
   margin: 5px auto;
   padding: 30px 12px;
-  box-shadow: 0px 0px 5px #aaaaaa ;
+  /* box-shadow: 0px 0px 5px #aaaaaa ; */
 }
 

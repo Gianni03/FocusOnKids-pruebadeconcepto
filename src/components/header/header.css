@@ -1,0 +1,29 @@
+.header{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  
+}
+.header-elements{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.header-logo img{
+  width: 70%;
+}
+.header-elements .header-iconos img{
+  margin: 0px .4em;
+}
+
+.header-nav ul{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  border-bottom: 5px solid green;
+}
+.header-nav .nav-element{
+  margin: .05em 1em;
+}
