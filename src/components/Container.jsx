@@ -1,7 +1,8 @@
 import React from 'react'
+import './container.module.css'
 
 export default function Container() {
   return (
-    <div>Container</div>
+    <div  className='flexWrapper'></div>
   )
 }
