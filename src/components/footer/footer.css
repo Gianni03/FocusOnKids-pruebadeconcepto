@@ -1,0 +1,26 @@
+.footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-body{
+  background-color: green;
+  color: antiquewhite;
+display: flex;
+justify-content: space-around;
+margin: .5em 3em;
+}
+.footer-col li{
+  list-style: none;
+  margin-bottom: .5em;
+}
+.footer-col a{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.footer-quarzo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
