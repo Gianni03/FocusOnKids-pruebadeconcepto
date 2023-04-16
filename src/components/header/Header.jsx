@@ -1,32 +1,50 @@
-import React from 'react';
+import useResize from '../../hooks/useResize';
+import Navbar from '../navbar/Navbar';
 import './header.css';
 
 const Header = () => {
-
+  const { screenSize } = useResize()
 
   return (
-    <header className='header'>
+    <header className="header">
 
-      <div className='header-elements'>
-        <div className="header-logo">
-          <img src="/assets/img/logo/logofok.png" alt="logo" />
-        </div>
-        <div className="header-iconos">
-          <img src="/assets/img/ico/user.svg" alt="" /> 
-          <img src="/assets/img/ico/cart.svg" alt="" /> 
-          <img src="/assets/img/ico/buscar.svg" alt="" /> 
-        </div>
+      <div className="header-link">
+        <span>
+          <a href="/">
+            {screenSize < 768 ? "Sumate al equipo de Focus On Kids" : "Si queres sumarte al equipo de Focus On Kids, envíanos tu CV"}
+          </a>
+          📰📌
+        </span>
       </div>
 
-      <nav className='header-nav nav'>
-        <ul>
-          <li className='nav-element'>ACERCA DE</li>
-          <li className='nav-element'>SERVICIOS</li>
-          <li className='nav-element'>CAPACITACIONES</li>
-          <li className='nav-element'>CONTACTO</li>
-          <li className='nav-element'>BLOG</li>
-        </ul>
-      </nav>
+        {screenSize >= 768 
+          ? (
+            <>
+              <div className="header-items-desk">
+                <div>
+                  <img src="/assets/img/logo/logofok.png" alt="Focus On Kids logo" />
+                </div>
+                <div>
+                  <img src="/assets/img/ico/buscar.svg" alt="Search icon" />
+                </div>
+              </div>
+              <Navbar />
+            </>
+          ) 
+          : (
+            <div className="header-items">
+              <Navbar />
+              <div>
+                <img src="/assets/img/logo/logofok.png" alt="Focus On Kids logo" />
+              </div>
+              <div>
+                <img src="/assets/img/ico/buscar.svg" alt="Search icon" />
+              </div>
+            </div>
+          )
+        }
+
+      <div className="header-hr"></div>
 
     </header>
   );
