@@ -1,15 +1,17 @@
 .footer{
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  margin-top: 2em;
 }
 .footer-body{
   background-color: green;
   color: antiquewhite;
-display: flex;
-justify-content: space-around;
-margin: .5em 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
+
 .footer-col li{
   list-style: none;
   margin-bottom: .5em;
@@ -18,9 +20,26 @@ margin: .5em 3em;
   color: aliceblue;
   text-decoration: none;
 }
+.footer-redes,
+.footer-contacto{
+  display: flex;
+  flex-direction: column;
+  margin: .7em 0px;
+}
+.footer-redes ul{
+  display: flex;
+  margin: .50em 0px;
+}
+.footer-redes ul li{
+  margin-right: 1em;
+}
 
 .footer-quarzo{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 1em ;
+  font-size: 12px;
+  color: grey;
+  font-weight: 400;
 }
