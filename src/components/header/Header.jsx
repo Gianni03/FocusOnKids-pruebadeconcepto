@@ -25,7 +25,8 @@ const Header = () => {
                   <img src="/assets/img/logo/logofok.png" alt="Focus On Kids logo" />
                 </div>
                 <div>
-                  <img src="/assets/img/ico/buscar.svg" alt="Search icon" />
+                íconos de acciones
+                  {/* <img src="/assets/img/ico/buscar.svg" alt="Search icon" /> */}
                 </div>
               </div>
               <Navbar />
@@ -38,7 +39,8 @@ const Header = () => {
                 <img src="/assets/img/logo/logofok.png" alt="Focus On Kids logo" />
               </div>
               <div>
-                <img src="/assets/img/ico/buscar.svg" alt="Search icon" />
+              íconos de acciones
+                {/* <img src="/assets/img/ico/buscar.svg" alt="Search icon" /> */}
               </div>
             </div>
           )
